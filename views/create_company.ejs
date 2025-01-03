@@ -1,0 +1,113 @@
+<%# # shows warning message that it will create an admin along side company to manage the company # shows the form to
+    create company %>
+
+
+    <style>
+        main {
+          padding: 20px;
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        #warnings-by-server {
+          color: red;
+          font-weight: bold;
+          margin-bottom: 15px;
+        }
+      
+        .alert {
+          width: 100%;
+          max-width: 600px;
+          margin: 10px auto;
+          text-align: center;
+        }
+      
+        .card {
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          border: 1px solid #dee2e6;
+          background-color: #fff;
+        }
+      
+        .card-body {
+          padding: 20px;
+        }
+      
+        .card-title {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 15px;
+          color: #007bff;
+        }
+      
+        .form-control {
+          border-radius: 8px;
+          border: 1px solid #ced4da;
+        }
+      
+        .form-control:focus {
+          border-color: #007bff;
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+      
+        .btn-primary {
+          width: 100%;
+          padding: 10px;
+          font-size: 1rem;
+          font-weight: bold;
+          border-radius: 8px;
+          background-color: #007bff;
+          border: none;
+        }
+      
+        .btn-primary:hover {
+          background-color: #0056b3;
+        }
+      
+        .form-floating textarea {
+          height: 100px;
+          border-radius: 8px;
+        }
+      
+        .form-floating label {
+          color: #6c757d;
+        }
+      </style>
+      
+      <main>
+        <div id="warnings-by-server"></div>
+      
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          While creating a company, we create an admin alongside it to manage the company.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      
+        <div class="card text-center" style="width: 25rem; margin: auto;">
+          <div class="card-body">
+            <h5 class="card-title">Create Company</h5>
+            <p class="card-text">
+            <form id="create-company-form">
+              <input type="text" class="form-control mb-3" name="name" placeholder="Name" required>
+              <input type="email" class="form-control mb-3" name="email" placeholder="Email" required>
+              <input type="password" class="form-control mb-3" name="password" placeholder="Password" required>
+              <input type="password" class="form-control mb-3" name="cpassword" placeholder="Confirm Password" required>
+              <input type="text" class="form-control mb-3" name="companyName" placeholder="Company Name" required>
+              <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Enter the company description here"
+                          id="companyDescription" name="companyDescription" required></textarea>
+                <label for="companyDescription">Company Description</label>
+              </div>
+              <button type="submit" class="btn btn-primary mb-3">Create</button>
+            </form>
+            </p>
+          </div>
+        </div>
+      
+        <script src="/js/create_company.js"></script>
+      </main>
+      
